@@ -1,4 +1,8 @@
 const task = document.getElementById('tasks');
+const usname=document.getElementByClassName('name');
+const username = localStorage.getItem('usname') || '';
+
+	usname.value = username;
         let todo = [];
 
         const addButton = document.querySelector('.add-btn');
@@ -75,6 +79,7 @@ const task = document.getElementById('tasks');
 
         function saveToLocalStorage() {
             localStorage.setItem('todo', JSON.stringify(todo));
+               localStorage.setItem('usname', JSON.stringify(usname));
         }
 
         function loadFromLocalStorage() {
